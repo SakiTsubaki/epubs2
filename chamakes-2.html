@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPUBS2</title>
+    <style>
+        /* Existing styles */
+
+        /* CTA buttons new styles */
+        .cta {
+            text-decoration: none;
+        }
+        .cta:hover, .cta:visited {
+            text-decoration: none;
+        }
+        .cta-primary:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .cta-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+        .cta-tertiary:hover {
+            background-color: #28a745;
+            color: white;
+        }
+
+        /* Dropdown submenu styles */
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+        /* Mobile behavior */
+        @media (max-width: 768px) {
+            .dropdown {
+                display: none;
+            }
+            .dropdown.visible {
+                display: block;
+            }
+        }
+    </style>
+    <script>
+        // Minimal JS to toggle submenu on mobile
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggle = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggle.forEach(function (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    const submenu = this.nextElementSibling;
+                    submenu.classList.toggle('visible');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="#">Secciones</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Sección Ámbar</a></li>
+                        <li><a href="#">Sección Naranja</a></li>
+                        <li><a href="#">Sección Azul</a></li>
+                        <li><a href="#">Sección Aqua</a></li>
+                        <li><a href="#">Sección Lila</a></li>
+                        <li><a href="#">Sección Verde</a></li>
+                        <li><a href="#">Galería</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Bienvenido a EPUBS2</h1>
+        <a href="#" class="cta cta-primary">Call to Action 1</a>
+        <a href="#" class="cta cta-secondary">Call to Action 2</a>
+        <a href="#" class="cta cta-tertiary">Call to Action 3</a>
+    </main>
+</body>
+</html>
